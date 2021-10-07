@@ -11,14 +11,8 @@ android {
         minSdkVersion(AndroidSdk.min)
         targetSdkVersion(AndroidSdk.target)
 
-        testInstrumentationRunner = AndroidSdk.testRunner
-    }
 
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Versions.compose
+        testInstrumentationRunner = AndroidSdk.testRunner
     }
     buildTypes {
         getByName("debug") {
@@ -26,21 +20,22 @@ android {
         }
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
-    flavorDimensions("full")
 
+    flavorDimensions("full")
     productFlavors {
         create("dev") {
-
         }
         create("prod") {
-
         }
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.compose
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -50,9 +45,7 @@ android {
         jvmTarget = "1.8"
     }
 }
-
 dependencies {
-    api(project(":presentation:ui"))
-    api(project(":presentation:home"))
 
+    api(project(":presentation:ui"))
 }

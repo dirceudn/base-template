@@ -1,5 +1,4 @@
 plugins {
-
     id("com.android.library")
     id("kotlin-android")
     id("kotlinx-serialization")
@@ -15,6 +14,16 @@ android {
 
 
         testInstrumentationRunner = AndroidSdk.testRunner
+    }
+
+    flavorDimensions("full")
+    productFlavors {
+        create("dev") {
+            buildConfigField("String", "DEEZER_BASE_URL", "\"api.deezer.com/2.0\"")
+        }
+        create("prod") {
+            buildConfigField("String", "DEEZER_BASE_URL", "\"api.deezer.com/2.0\"")
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

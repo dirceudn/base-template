@@ -31,7 +31,10 @@ class LaunchRequest {
                         when (response.status.value) {
                             in 300..399 -> Either.Left(
                                 DefaultErrorEntity.Network(
-                                    throwable = RedirectResponseException(response)
+                                    throwable = RedirectResponseException(
+                                        response = response,
+                                        cachedResponseText = responseString
+                                    )
                                 )
                             )
                             in 400..499 ->
@@ -39,12 +42,12 @@ class LaunchRequest {
                                     Either.Left(it(responseString))
                                 } ?: Either.Left(
                                     DefaultErrorEntity.Network(
-                                        throwable = ClientRequestException(response)
+                                        throwable = ClientRequestException(response = response, cachedResponseText = responseString)
                                     )
                                 )
                             in 500..599 -> Either.Left(
                                 DefaultErrorEntity.Network(
-                                    throwable = ServerResponseException(response)
+                                    throwable = ServerResponseException(response = response, cachedResponseText = responseString)
                                 )
                             )
                             else -> Either.Left(DefaultErrorEntity.Unknown(throwable = null))

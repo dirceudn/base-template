@@ -14,6 +14,24 @@ android {
 
         testInstrumentationRunner = AndroidSdk.testRunner
     }
+
+    buildTypes {
+        getByName("debug") {
+            isMinifyEnabled = false
+        }
+        getByName("release") {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+        }
+    }
+
+    flavorDimensions("full")
+    productFlavors {
+        create("dev") {
+        }
+        create("prod") {
+        }
+    }
     buildFeatures {
         compose = true
     }
@@ -51,5 +69,7 @@ dependencies {
     api(Android.appCompat)
     api(Android.material)
     api(Accompanist.insets)
+
+    api(project(":core"))
 
 }
