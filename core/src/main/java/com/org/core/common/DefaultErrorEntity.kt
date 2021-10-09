@@ -13,6 +13,11 @@ sealed class DefaultErrorEntity(
         }
     }
 
+    data class NoDataFound(
+        val error: String? = null,
+        override val throwable: Throwable?
+    ) : DefaultErrorEntity(throwable, error)
+
     data class ErrorWithMessage(val error: String, override val throwable: Throwable? = null) :
         DefaultErrorEntity(throwable, error) {
         init {
@@ -28,14 +33,6 @@ sealed class DefaultErrorEntity(
     }
 
     data class CheckInError(val error: String? = null) :
-        DefaultErrorEntity(message = error) {
-    }
-
-    data class UnknownBusNetwork(val error: String? = null) :
-        DefaultErrorEntity(message = error) {
-    }
-
-    data class UnknownBusLine(val error: String? = null) :
         DefaultErrorEntity(message = error) {
     }
 

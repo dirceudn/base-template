@@ -15,10 +15,4 @@ class DeezerAlbumApi(private val clientFactory: () -> HttpClient) {
             encodedPath = "/user/2529/albums"
         }
     }
-
-    suspend fun fetchAlbumDetail(albumId: String) = client.get<HttpResponse> {
-        url {
-            encodedPath = "/album/${albumId}"
-        }
-    }
 }

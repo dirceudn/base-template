@@ -54,5 +54,7 @@ android {
 dependencies {
     api(project(":presentation:ui"))
     api(project(":presentation:home"))
+    api(project(":presentation:albumdetail"))
+    api(project(":presentation:route"))
 
 }

@@ -69,6 +69,7 @@ dependencies {
     api(Android.appCompat)
     api(Android.material)
     api(Accompanist.insets)
+    api(Accompanist.coil)
 
     api(project(":core"))
 

@@ -14,7 +14,9 @@
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/presentation" />
+            <option value="$PROJECT_DIR$/presentation/albumdetail" />
             <option value="$PROJECT_DIR$/presentation/home" />
+            <option value="$PROJECT_DIR$/presentation/route" />
             <option value="$PROJECT_DIR$/presentation/ui" />
           </set>
         </option>

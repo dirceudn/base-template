@@ -8,7 +8,7 @@ import com.org.core.home.data.model.toDataModel
 class NetworkDeezerAlbumDataSource(private val deezerAlbumApi: DeezerAlbumApi) :
     DeezerAlbumDataSource {
 
-    override suspend fun getAlbum() = launchRequest<DeezerAlbumResponse> {
+    override suspend fun getAlbums() = launchRequest<DeezerAlbumResponse> {
         request = {
             deezerAlbumApi.fetchAlbums()
         }

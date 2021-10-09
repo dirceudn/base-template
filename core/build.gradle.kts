@@ -54,6 +54,14 @@ dependencies {
 
     // date time
     api(DateTime.dateTime)
+    testApi(Ktor.testKtor)
+
+    // Required -- JUnit 4 framework
+    testImplementation("junit:junit:4.13.2")
+    // Optional -- Robolectric environment
+    testImplementation("androidx.test:core:1.4.0")
+    // Optional -- Mockito framework
+    testImplementation("org.mockito:mockito-core:2.27.0")
 
     // Logs
     api(Logs.napier)

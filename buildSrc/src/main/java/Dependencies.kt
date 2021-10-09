@@ -1,13 +1,13 @@
-object Versions{
+object Versions {
 
-    const val kotlin = "1.5.10"
+    const val kotlin = "1.5.30"
 
     /**
      * Compose
      */
-    const val compose = "1.0.0"
+    const val compose = "1.0.3"
     const val composeTest = "1.0.0-rc02"
-    const val composeActivity = "1.3.0"
+    const val composeActivity = "1.3.1"
     const val composeNavigation = "2.4.0-alpha05"
     const val composeConstraintLayout = "1.0.0-beta01"
 
@@ -44,6 +44,9 @@ object Versions{
     const val kotlinCoroutines = "1.4.3"
     //---
 
+    const val CoilCompose = "1.4.0"
+
+
 }
 
 object Logs {
@@ -74,6 +77,8 @@ object Ktor {
     const val androidClient = "io.ktor:ktor-client-android:${Versions.ktor}"
     const val iosClient = "io.ktor:ktor-client-ios:${Versions.ktor}"
     const val clientLogging = "io.ktor:ktor-client-logging:${Versions.ktor}"
+    const val testKtor = "io.ktor:ktor-client-mock:$${Versions.ktor}"
+
 }
 
 object Test {
@@ -86,8 +91,10 @@ object Android {
     const val coreKtx = "androidx.core:core-ktx:${Versions.androidKtx}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
     const val material = "com.google.android.material:material:${Versions.material}"
-    const val androidXlifeCycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidXlifeCycle}"
-    const val androidXlifeCycleExtension = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidXlifeCycle}"
+    const val androidXlifeCycleViewModel =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidXlifeCycle}"
+    const val androidXlifeCycleExtension =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.AndroidXlifeCycle}"
 }
 
 object Compose {
@@ -115,6 +122,7 @@ object LifeCycle {
 }
 
 object Accompanist {
+    const val coil = "io.coil-kt:coil-compose:${Versions.CoilCompose}"
     const val accomPanist = "com.google.accompanist:accompanist-permissions:${Versions.accompanist}"
     const val insets = "com.google.accompanist:accompanist-insets:${Versions.accompanist}"
 
@@ -127,7 +135,7 @@ object Koin {
 
 
 object AndroidSdk {
-    const val appId = "com.org.sweather"
+    const val appId = "com.org.deezermusic"
     const val min = 21
     const val compile = 30
     const val target = compile

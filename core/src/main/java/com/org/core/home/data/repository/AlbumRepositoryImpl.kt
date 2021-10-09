@@ -18,8 +18,8 @@ class AlbumRepositoryImpl(private val albumDataSource: DeezerAlbumDataSource) : 
     override suspend fun getAlbums() {
         if (_deezerAlbumMutableState.value !is State.Loading) {
             _deezerAlbumMutableState.value = State.Loading()
-            _deezerAlbumMutableState.value = albumDataSource.getAlbum().fold({
-                State.Failure()
+            _deezerAlbumMutableState.value = albumDataSource.getAlbums().fold({ errorDataModel ->
+                State.Failure(error = errorDataModel)
             }, { deezerAlbumData ->
                 State.Success(data = deezerAlbumData)
             })

@@ -6,5 +6,5 @@ import com.org.core.home.data.model.DeezerAlbumDataModel
 
 interface DeezerAlbumDataSource {
 
-    suspend fun getAlbum(): Either<DefaultErrorDataModel, DeezerAlbumDataModel>
+    suspend fun getAlbums(): Either<DefaultErrorDataModel, DeezerAlbumDataModel>
 }

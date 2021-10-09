@@ -1,8 +1,8 @@
 package com.org.kbase
 
 import android.app.Application
+import com.org.albumdetail.di.albumDetailModule
 import com.org.core.app.di.initKoinDependencies
-import com.org.core.home.homeModule
 import com.org.kbase.app.di.appModule
 import io.github.aakira.napier.DebugAntilog
 import io.github.aakira.napier.Napier
@@ -21,7 +21,7 @@ class DeezerApplication : Application() {
             Napier.base(DebugAntilog("DeezerApplication"))
             initKoinDependencies(
                 isDebug = BuildConfig.DEBUG,
-                specificModules = listOf(appModule)
+                specificModules = listOf(appModule, albumDetailModule)
             ) {
                 androidLogger()
                 androidContext(this@DeezerApplication)

@@ -50,6 +50,7 @@ class LaunchRequest {
                                     throwable = ServerResponseException(response = response, cachedResponseText = responseString)
                                 )
                             )
+                            in 599 ..800 -> Either.Left(DefaultErrorEntity.NoDataFound( throwable = ServerResponseException(response = response, cachedResponseText = responseString)))
                             else -> Either.Left(DefaultErrorEntity.Unknown(throwable = null))
                         }
                     }

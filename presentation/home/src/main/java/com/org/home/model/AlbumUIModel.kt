@@ -5,7 +5,14 @@ import com.org.core.home.data.model.DeezerAlbumDataModel
 
 data class AlbumsCollection(val albums: List<AlbumUIModel>)
 
-data class AlbumUIModel(val id: Long?)
+data class AlbumUIModel(
+    val id: Long?,
+    val title: String?,
+    val artistName: String?,
+    val cover: String?,
+    val coverSmall: String?,
+    val coverBig: String?
+)
 
 fun DeezerAlbumDataModel.mapAlbumCollectionUiModel() = AlbumsCollection(
     albums = this.albums.map { album ->
@@ -14,5 +21,10 @@ fun DeezerAlbumDataModel.mapAlbumCollectionUiModel() = AlbumsCollection(
 )
 
 fun AlbumDataModel.toAlbumUiMode() = AlbumUIModel(
-    id = id
+    id = id,
+    title = title,
+    artistName = artistName,
+    cover = coverMedium,
+    coverBig = coverBig,
+    coverSmall = coverSmall
 )
