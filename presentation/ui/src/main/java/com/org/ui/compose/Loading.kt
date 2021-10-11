@@ -1,15 +1,15 @@
 package com.org.ui.compose
 
 import androidx.compose.animation.core.*
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.org.ui.theme.boulder
+import com.org.ui.theme.funGray
 
 @Composable
 fun BallPulseSyncIndicator(modifier: Modifier) {
@@ -50,4 +50,15 @@ fun Ball(modifier: Modifier) {
         )
     })
 
+}
+
+@Composable
+fun LoadingView(color: Color = funGray) {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        BallPulseSyncIndicator(modifier = Modifier.size(40.dp))
+    }
 }

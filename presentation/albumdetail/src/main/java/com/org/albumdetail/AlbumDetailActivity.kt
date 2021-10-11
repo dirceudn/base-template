@@ -130,7 +130,7 @@ fun AlbumDetailPage(albumDetailViewModel: AlbumDetailViewModel) {
 
 @Composable
 fun NoAlbumView() {
-
+    NoDataFound(title = "No Album Found")
 }
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -307,7 +307,7 @@ fun AlbumTrackContent(
 
 @Composable
 fun TrackAlbumNoData() {
-
+    NoDataFound(title = "No Tracks Found")
 }
 
 @Composable
@@ -418,18 +418,8 @@ fun CoverItem(label: String?, picture: String?) {
     }
 }
 
-@Composable
-fun LoadingView() {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        BallPulseSyncIndicator(modifier = Modifier.size(40.dp))
-    }
-}
 
 @Composable
 fun ErrorAlbumView() {
-
+    NoDataFound(title = "No Album found")
 }
