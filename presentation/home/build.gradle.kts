@@ -45,6 +45,9 @@ android {
         jvmTarget = "1.8"
     }
 }
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions.freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
+}
 dependencies {
 
     api(project(":presentation:ui"))

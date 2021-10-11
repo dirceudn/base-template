@@ -84,4 +84,5 @@ fun getJsonSerializer() = Json(from = Json) {
     ignoreUnknownKeys = true
     coerceInputValues = true
     isLenient = true
+    encodeDefaults = false
 }

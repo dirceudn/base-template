@@ -6,7 +6,7 @@ object Versions {
      * Compose
      */
     const val compose = "1.0.3"
-    const val composeTest = "1.0.0-rc02"
+    const val composeTest =  compose
     const val composeActivity = "1.3.1"
     const val composeNavigation = "2.4.0-alpha05"
     const val composeConstraintLayout = "1.0.0-beta01"
@@ -85,6 +85,20 @@ object Test {
     const val jUnit = "junit:junit:${Versions.junit}"
     const val runner = "androidx.test:runner:${Versions.testRunner}"
     const val composeTest = "androidx.compose.ui:ui-test-junit4:${Versions.composeTest}}"
+    const val composeTestManifest = "androidx.compose.ui:ui-test-manifest${Versions.composeTest}"
+    const val testRunner = "androidx.test:runner:1.4.0"
+    const val testEspresso = "androidx.test.espresso:espresso-core:3.4.0"
+    const val testRules = "com.android.support.test:rules:1.0.2"
+    const val mockitoAndroid = "org.mockito:mockito-android:3.10.0"
+    const val mockk = "io.mockk:mockk-android:1.9.1"
+    const val mockitoCore = "org.mockito:mockito-core:3.10.0"
+    const val powerMock = "org.powermock:powermock-module-junit4:1.7.0"
+    const val powerMockOcr = "org.powermock:powermock-api-mockito2:1.7.0RC2"
+    const val mockkIo = "io.mockk:mockk:1.9.1"
+    const val archCoreTest = "android.arch.core:core-testing:1.1.1"
+    const val courotinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0"
+    const val tourbine = "app.cash.turbine:turbine:0.6.1"
+
 }
 
 object Android {
@@ -110,7 +124,7 @@ object Compose {
     const val navigation = "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraintLayout}"
-    const val riple =  "androidx.compose.material:material-ripple:${Versions.compose}"
+    const val riple = "androidx.compose.material:material-ripple:${Versions.compose}"
 
 }
 
@@ -133,6 +147,7 @@ object Accompanist {
 object Koin {
     const val core = "io.insert-koin:koin-core:${Versions.koin}"
     const val android = "io.insert-koin:koin-android:${Versions.koin}"
+    const val koinTest = "io.insert-koin:koin-test-junit4:${Versions.koin}"
 }
 
 

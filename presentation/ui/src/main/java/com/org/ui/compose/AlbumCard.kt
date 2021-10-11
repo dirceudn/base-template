@@ -2,7 +2,6 @@ package com.org.ui.compose
 
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.fadeIn
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -88,6 +87,7 @@ fun AlbumCardCover(
     @DrawableRes placeHolder: Int,
     onClick: () -> Unit
 ) {
+
     Card(
         modifier = Modifier
             .clickable { onClick() },
@@ -97,7 +97,7 @@ fun AlbumCardCover(
             painter = rememberImagePainter(
                 data = cover,
                 builder = {
-                    fadeIn(initialAlpha = 0.4f)
+                    crossfade(300) // fadein not working propertly yet at jepack compose. That's why I'm using crossfade
                     placeholder(placeHolder)
                     error(placeHolder)
                     memoryCachePolicy(CachePolicy.ENABLED)

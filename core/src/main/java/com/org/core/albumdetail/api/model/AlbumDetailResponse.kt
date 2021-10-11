@@ -39,8 +39,6 @@ data class DeezerAlbumDetailResponse(
     val duration: Long?,
     @SerialName("fans")
     val fans: Long?,
-    @SerialName("rating")
-    val rating: Int?,
     @SerialName("release_date")
     val releaseDate: String?,
     @SerialName("record_type")

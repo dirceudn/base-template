@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -39,6 +40,7 @@ import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
+@ExperimentalAnimationApi
 class AlbumDetailActivity : AppCompatActivity() {
 
     private val albumId by lazy { extractAlbumId(intent) }
@@ -66,6 +68,8 @@ class AlbumDetailActivity : AppCompatActivity() {
     }
 }
 
+@ExperimentalAnimationApi
+@OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun AlbumPageScreen(albumDetailViewModel: AlbumDetailViewModel, context: Context) {
     Box(
@@ -88,6 +92,8 @@ fun AlbumPageScreen(albumDetailViewModel: AlbumDetailViewModel, context: Context
 
 }
 
+@OptIn(ExperimentalAnimationApi::class)
+@ExperimentalAnimationApi
 @Composable
 fun AlbumDetailActionBar(context: Context) {
     BackAppBar(
@@ -98,6 +104,7 @@ fun AlbumDetailActionBar(context: Context) {
 }
 
 
+@ExperimentalAnimationApi
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun AlbumDetailPage(albumDetailViewModel: AlbumDetailViewModel) {
@@ -130,9 +137,11 @@ fun AlbumDetailPage(albumDetailViewModel: AlbumDetailViewModel) {
 
 @Composable
 fun NoAlbumView() {
-    NoDataFound(title = "No Album Found")
+    val context = LocalContext.current
+    NoDataFound(title = context.getString(R.string.not_album_found))
 }
 
+@ExperimentalAnimationApi
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun AlbumDetailView(
@@ -192,6 +201,7 @@ fun AlbumDetailView(
                         .padding(top = 20.dp),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+
                     AlbumCardCover(
                         modifier = Modifier
                             .size(200.dp),
@@ -201,6 +211,7 @@ fun AlbumDetailView(
                     ) {
 
                     }
+
                     Spacer(modifier = Modifier.height(20.dp))
                     AlbumDetailLabel(
                         modifier = Modifier.fillMaxWidth(),
@@ -307,7 +318,8 @@ fun AlbumTrackContent(
 
 @Composable
 fun TrackAlbumNoData() {
-    NoDataFound(title = "No Tracks Found")
+    val context = LocalContext.current
+    NoDataFound(title = context.getString(R.string.not_tracks_found))
 }
 
 @Composable
@@ -360,7 +372,8 @@ fun TrackAlbumItemRow(
 
 @Composable
 fun TrackEmptyView() {
-
+    val context = LocalContext.current
+    NoDataFound(title = context.getString(R.string.not_tracks_found))
 }
 
 @Composable
@@ -421,5 +434,6 @@ fun CoverItem(label: String?, picture: String?) {
 
 @Composable
 fun ErrorAlbumView() {
-    NoDataFound(title = "No Album found")
+    val context = LocalContext.current
+    NoDataFound(title = context.getString(R.string.not_album_found))
 }
