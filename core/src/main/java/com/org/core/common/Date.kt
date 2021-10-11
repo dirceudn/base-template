@@ -1,5 +1,6 @@
 package com.org.core.common
 
+import android.text.format.DateUtils
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
@@ -14,4 +15,8 @@ fun String.formatDate(): String? {
     } catch (e: Exception) {
         "--"
     }
+}
+
+fun Long.formatDuration(): String {
+   return  DateUtils.formatElapsedTime(this)
 }

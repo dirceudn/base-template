@@ -5,10 +5,7 @@ import com.org.core.albumdetail.api.network.NetworkAlbumDetailDataSource
 import com.org.core.albumdetail.data.datasource.AlbumDetailDataSource
 import com.org.core.albumdetail.data.repository.AlbumDetailRepositoryImpl
 import com.org.core.albumdetail.domain.repository.AlbumDetailRepository
-import com.org.core.albumdetail.domain.usecase.AlbumDetailFlowUseCase
-import com.org.core.albumdetail.domain.usecase.GetAlbumDetailUseCase
-import com.org.core.albumdetail.domain.usecase.albumDetailFlowUseCase
-import com.org.core.albumdetail.domain.usecase.getAlbumDetailUseCase
+import com.org.core.albumdetail.domain.usecase.*
 import com.org.core.clients.deezerAlbumClient
 import org.koin.dsl.module
 
@@ -21,6 +18,8 @@ fun albumDetailDiModule(deezerBaseUrl: String, isDebug: Boolean) = module {
 val useCase = module {
     factory<AlbumDetailFlowUseCase> { albumDetailFlowUseCase(get()) }
     factory<GetAlbumDetailUseCase> { getAlbumDetailUseCase(get()) }
+    factory<GetAlbumTrackUseCase> { getAlbumTrackUseCase(get()) }
+    factory<TrackAlbumFlowUseCase> { trackAlbumFlowUseCase(get()) }
 
 }
 

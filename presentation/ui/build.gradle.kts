@@ -54,6 +54,7 @@ dependencies {
     api(Compose.activity)
     api(Compose.ui)
     api(Compose.uiGraphics)
+    api(Compose.riple)
     api(Compose.uiTooling)
     api(Compose.foundationLayout)
     api(Compose.material)

@@ -37,7 +37,7 @@ object Versions {
     //-kotlin jetbrains libs
 
     // network
-    const val ktor = "1.6.1"
+    const val ktor = "1.6.4"
     const val kotlinx = "1.2.2"
     //courotines
 
@@ -110,6 +110,8 @@ object Compose {
     const val navigation = "androidx.navigation:navigation-compose:${Versions.composeNavigation}"
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout-compose:${Versions.composeConstraintLayout}"
+    const val riple =  "androidx.compose.material:material-ripple:${Versions.compose}"
+
 }
 
 object LifeCycle {

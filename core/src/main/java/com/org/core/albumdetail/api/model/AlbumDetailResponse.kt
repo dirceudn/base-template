@@ -79,7 +79,7 @@ data class DeezerAlbumDetailResponse(
     @Serializable
     data class Contributor(
         @SerialName("id")
-        val id: String?,
+        val id: Long?,
         @SerialName("name")
         val name: String?,
         @SerialName("link")

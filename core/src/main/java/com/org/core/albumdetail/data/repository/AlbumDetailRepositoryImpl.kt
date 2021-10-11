@@ -2,6 +2,7 @@ package com.org.core.albumdetail.data.repository
 
 import com.org.core.albumdetail.data.datasource.AlbumDetailDataSource
 import com.org.core.albumdetail.data.model.DeezerAlbumDetailDataModel
+import com.org.core.albumdetail.data.model.DeezerAlbumTracksDataModel
 import com.org.core.albumdetail.domain.repository.AlbumDetailRepository
 import com.org.core.common.State
 import kotlinx.coroutines.flow.Flow
@@ -12,6 +13,11 @@ class AlbumDetailRepositoryImpl(private val albumDetailDataSource: AlbumDetailDa
 
     private val _deezerAlbumDetailMutableState =
         MutableStateFlow<State<DeezerAlbumDetailDataModel>>(
+            State.Uninitialized()
+        )
+
+    private val _deezerAlbumTracksMutableState =
+        MutableStateFlow<State<DeezerAlbumTracksDataModel>>(
             State.Uninitialized()
         )
 
@@ -29,4 +35,19 @@ class AlbumDetailRepositoryImpl(private val albumDetailDataSource: AlbumDetailDa
 
     override val deezerAlbumDetailState: Flow<State<DeezerAlbumDetailDataModel>>
         get() = _deezerAlbumDetailMutableState
+
+    override val deezerAlbumTrackState: Flow<State<DeezerAlbumTracksDataModel>>
+        get() = _deezerAlbumTracksMutableState
+
+    override suspend fun getTracksFromAlbum(id: Long) {
+        if (_deezerAlbumTracksMutableState.value !is State.Loading) {
+            _deezerAlbumTracksMutableState.value = State.Loading()
+            _deezerAlbumTracksMutableState.value =
+                albumDetailDataSource.getTrackFromAlbum(id = id).fold({ errorDataModel ->
+                    State.Failure(error = errorDataModel)
+                }, { deezerAlbumTrackData ->
+                    State.Success(data = deezerAlbumTrackData)
+                })
+        }
+    }
 }

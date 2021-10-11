@@ -20,11 +20,12 @@ val manatee = Color(0xFF9A99A2)
 val malachite = Color(0xFF0ABA66)
 val funGray = Color(0xff373A36)
 
+
 val black = Color(0xFF000000)
 val white = Color(0xFFFFFFFF)
 val transparent = Color(0x00000000)
 val blackTransparency = Color(0xaa000000)
 val blackLessTransparency = Color(0xdd000000)
 val blackLessTransparencySeven = Color(0xb3000000)
-val whiteLessTransparencySeven = Color(0xb3FFFFFF)
+val whiteLessTransparencySeven = Color(0x40FFFFFF)
 val blackBlurry = Color(0x77000000)

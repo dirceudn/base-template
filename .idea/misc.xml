@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="presentation/ui/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.32395833333333335" />
+        <entry key="presentation/ui/src/main/res/drawable/ic_bottom_open.xml" value="0.32395833333333335" />
+        <entry key="presentation/ui/src/main/res/drawable/ic_play.xml" value="0.32395833333333335" />
       </map>
     </option>
   </component>

@@ -15,7 +15,7 @@ sealed class DefaultErrorEntity(
 
     data class NoDataFound(
         val error: String? = null,
-        override val throwable: Throwable?
+        override val throwable: Throwable? = null
     ) : DefaultErrorEntity(throwable, error)
 
     data class ErrorWithMessage(val error: String, override val throwable: Throwable? = null) :
